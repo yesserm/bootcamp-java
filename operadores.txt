@@ -1,0 +1,96 @@
+int multiplicacion(int numero1, int numero2){
+    return numero1 * numero2;
+}
+multiplicacion(5,2);
+int suma(int numero1, int numero2){
+    return numero1 + numero2;
+}
+suma(5,5);
+boolean positivoMenorDe20(int numero){
+    return numero > 0 && numero < 20;
+}
+positivoMenorDe20(10);
+positivoMenorDe20(100);
+int truncado(int n){
+    return n / 10;
+}
+truncado(123);
+truncado(45);
+truncado(456);
+truncado(9);
+truncado(0);
+int ultimoDigito(int n){
+    return n % 10;
+}
+ultimoDigito(456);
+ultimoDigito(45);
+ultimoDigito(123);
+ultimoDigito(0);
+boolean unicoDigito(int n){
+    return (n >= 0) && (n <= 9);
+}
+unicoDigito(10);
+unicoDigito(8);
+String signo(int n){
+    return (n >= 0) ? "no-negativo" : "negativo";
+}
+signo(100);
+signo(-10);
+boolean esPar(int numero){
+    return numero % 2 == 0;
+}
+esPar(10);
+esPar(11);
+boolean esImpar(int numero){
+    return numero % 2 != 0;
+}
+esImpar(2);
+esImpar(3);
+int diferenciaDeCuadrados(int numero1, int numero2){
+    return (numero1+numero2)*(numero1-numero2);
+}
+diferenciaDeCuadrados(3,2);
+diferenciaDeCuadrados(1,1);
+diferenciaDeCuadrados(2,2);
+double tercerAngulo(double numero1, double numero2){
+    return (numero1+numero2) < 180 ? (180-numero1-numero2) : 0;
+}
+tercerAngulo(60.0, 60.0);
+tercerAngulo(45.0, 90.0);
+tercerAngulo(35.0, 50.0);
+tercerAngulo(90.0, 90.0);
+tercerAngulo(90.0, 95.0);
+boolean validarMultipleDe7(int numero){
+    return numero > 0 && numero < 1000 ? numero % 7 == 0 : false;
+}
+validarMultipleDe7(-7);
+validarMultipleDe7(0);
+validarMultipleDe7(91);
+validarMultipleDe7(9100);
+boolean validar(int inicio, int mitad, int tam){
+    return inicio >= 0 && inicio < mitad && mitad < tam ? true : false;
+}
+validar(0,1,2);
+validar(1,1,2);
+validar(0,3,3);
+validar(1,3,5);
+double cobro(int minutos){
+    double valor = 0.0;
+    valor = minutos * 10.0;
+    if(valor < 100) valor = 100.0;
+    if(valor > 3000) valor = 3000.00;
+    return valor;
+}
+cobro(1);
+cobro(10);
+cobro(15);
+cobro(90);
+cobro(1000);
+inicio(6,1);
+int inicio(int resultados, int pagina){
+    return (resultados * pagina) - resultados;
+}
+inicio(6,1);
+inicio(6,2);
+inicio(6,3);
+inicio(10,2);
