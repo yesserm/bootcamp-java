@@ -1,0 +1,103 @@
+boolean empiezaConMinuscula(String s){
+    var primerCaracter = s.charAt(0);
+    return Character.isLowerCase(primerCaracter);
+}
+empiezaConMinuscula("Hola");
+empiezaConMinuscula("hola");
+pluralizar(1, "código");
+pluralizar(2, "código");
+pluralizar(2, "código");
+String pluralizar(int conteo, String s){
+    return (conteo < 2) ? s : s.format("%d %ss",conteo,s);
+}
+pluralizar(2, "código");
+pluralizar(1, "código");
+boolean esVocal(char letra){
+    var letraMinuscula = Character.toLowerCase(letra);
+    return "aeiou".contains(Character.toString(letraMinuscula));
+}
+esVocal('a');
+esVocal('b');
+esVocal('A');
+esVocal('@');
+String titleCase(String texto){
+    var primeraLetra = texto.substring(0,1);
+    var restoDelTexto = texto.substring(1);
+    return String.format("%S%s", primeraLetra, restoDelTexto.toLowerCase());
+}
+titleCase("java");
+titleCase("Java");
+titleCase("JAVA");
+boolean terminaEnS(String texto){
+    var ultimoCaracter = texto.charAt(texto.length()-1);
+    return (ultimoCaracter == 's') || (ultimoCaracter == 'S');
+}
+terminaEnS("miercoles");
+terminaEnS("jueves");
+terminaEnS("sabado");
+esPalindrome("ab");
+esPalindrome("ee");
+esPalindrome("Aa");
+boolean esPalindrome(String texto) {
+    var cadenaMinuscula = texto.toLowerCase();
+    return cadenaMinuscula.charAt(0) == cadenaMinuscula.charAt(cadenaMinuscula.length()-1);
+}
+esPalindrome("Aa");
+esPalindrome("ee");
+esPalindrome("ab");
+boolean esExterno(String enlace){
+    var esquema = enlace.substring(0,4);
+    return esquema.toLowerCase().contains("http");
+}
+esExterno("/definetely-internal");
+esExterno("https://www.java.com");
+esExterno("http://dont-go.com");
+String extension(String texto){
+    int lastIndexDot = texto.lastIndexOf(".");
+    if(lastIndexDot > 0) {
+        return texto.substring(lastIndexDot+1);
+    } else {
+        return "";
+    }
+}
+extension("debug.sh");
+extension("/path/to/debug.sh");
+extension("/the.dot/file.java");
+extension("no-extension");
+String domain(String url){
+    int indexBarra = url.indexOf("://");
+    int indexSlashAfter = url.indexOf("/", indexBarra+3);
+    String domain = url.substring(indexBarra+3, indexSlashAfter > 0 ? indexSlashAfter : url.length());
+    return domain;
+}
+domain("https://www.java.com/en/");
+domain("https://jcp.org/");
+domain("ftp://hola.com")
+String domingoDePascua(int anyo){
+     var a = anyo % 19;
+     var b = anyo / 100;
+     var c = anyo % 100;
+     var d = b / 4;
+     var e = b % 4;
+     var g = ((8 * b) + 13) / 25;
+     var h = ((19 * a) + b- d- g + 15) % 30;
+     var i = c / 4;
+     var k = c % 4;
+     var l = (32 + (2 * e) + (2 * i)- h- k) % 7;
+     var m = (a + (11 * h) + (19 * l)) / 433;
+     var n = (h + l- (7 * m) + 90) / 25;
+     var p = (h + l- (7 * m) + (33 * n) + 19) % 32;
+    return String.format("%d/%02d/%02d",anyo,n,p);
+}
+domingoDePascua(2024);
+domingoDePascua(2025);
+domingoDePascua(1965);
+domingoDePascua(1961);
+String hexString(int red, int green, int blue){
+    if((red < 0 || green < 0 || blue < 0) || (red > 255 || green > 255 || blue > 255)){
+        return "Color inexistente";
+    }
+     return String.format("#%02X%02X%02X",red, green, blue);
+}
+hexString(0,0,0);
+hexString(12,15,77);
